@@ -62,6 +62,6 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(9), "ix"));
         }
 
-    #endregion
+        #endregion
     }
 }

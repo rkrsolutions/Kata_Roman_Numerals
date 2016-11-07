@@ -12,7 +12,11 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            if (arabicNumber >= 5)
+            if (arabicNumber == 9)
+            {
+                romanNumerals = "ix";
+            }
+            else if (arabicNumber >= 5)
             {
                 romanNumerals = "v";
 
