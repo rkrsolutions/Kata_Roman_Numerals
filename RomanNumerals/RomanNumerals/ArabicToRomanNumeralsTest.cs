@@ -74,6 +74,21 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual("x", RomanNumeralConverter.ArabicToRomanNumerals(10)));
         }
 
+        [TestMethod]
+        public void GreaterThan10LessThan40Test()
+        {
+            Assert.IsTrue(StringsAreEqual("xi", RomanNumeralConverter.ArabicToRomanNumerals(11)));
+            Assert.IsTrue(StringsAreEqual("xiii", RomanNumeralConverter.ArabicToRomanNumerals(13)));
+            Assert.IsTrue(StringsAreEqual("xiv", RomanNumeralConverter.ArabicToRomanNumerals(14)));
+            Assert.IsTrue(StringsAreEqual("xv", RomanNumeralConverter.ArabicToRomanNumerals(15)));
+            Assert.IsTrue(StringsAreEqual("xvi", RomanNumeralConverter.ArabicToRomanNumerals(15)));
+            Assert.IsTrue(StringsAreEqual("xix", RomanNumeralConverter.ArabicToRomanNumerals(19)));
+            Assert.IsTrue(StringsAreEqual("xx", RomanNumeralConverter.ArabicToRomanNumerals(20)));
+            Assert.IsTrue(StringsAreEqual("xxi", RomanNumeralConverter.ArabicToRomanNumerals(21)));
+            Assert.IsTrue(StringsAreEqual("xxxviii", RomanNumeralConverter.ArabicToRomanNumerals(38)));
+            Assert.IsTrue(StringsAreEqual("xxxix", RomanNumeralConverter.ArabicToRomanNumerals(39)));
+        }
+
         #endregion
     }
 }
