@@ -12,9 +12,9 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            if (arabicNumber == 1)
+            for (int i = 1; i <= arabicNumber; i++)
             {
-                romanNumerals = "i";
+                romanNumerals += "i";
             }
 
             return romanNumerals;
