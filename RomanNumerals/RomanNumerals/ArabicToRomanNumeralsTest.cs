@@ -46,6 +46,13 @@ namespace RomanNumerals
         {
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(4), "iv"));
         }
+
+        [TestMethod]
+        public void FiveTest()
+        {
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(5), "v"));
+        }
+
         #endregion
     }
 }
