@@ -81,7 +81,7 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual("xiii", RomanNumeralConverter.ArabicToRomanNumerals(13)));
             Assert.IsTrue(StringsAreEqual("xiv", RomanNumeralConverter.ArabicToRomanNumerals(14)));
             Assert.IsTrue(StringsAreEqual("xv", RomanNumeralConverter.ArabicToRomanNumerals(15)));
-            Assert.IsTrue(StringsAreEqual("xvi", RomanNumeralConverter.ArabicToRomanNumerals(15)));
+            Assert.IsTrue(StringsAreEqual("xvi", RomanNumeralConverter.ArabicToRomanNumerals(16)));
             Assert.IsTrue(StringsAreEqual("xix", RomanNumeralConverter.ArabicToRomanNumerals(19)));
             Assert.IsTrue(StringsAreEqual("xx", RomanNumeralConverter.ArabicToRomanNumerals(20)));
             Assert.IsTrue(StringsAreEqual("xxi", RomanNumeralConverter.ArabicToRomanNumerals(21)));
