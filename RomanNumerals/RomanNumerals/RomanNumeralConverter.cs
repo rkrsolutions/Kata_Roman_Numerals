@@ -12,11 +12,22 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            if ((arabicNumber % 5) == 0)
+            if (arabicNumber >= 5)
             {
                 romanNumerals = "v";
+
+                int arabicRemainder = arabicNumber % 5;
+
+                if (arabicRemainder > 0)
+                {
+                    for (int i = 1; i <= arabicRemainder; i++)
+                    {
+                        romanNumerals += "i";
+                    }
+                }
+
             }
-            else if ((arabicNumber + 1) % 5 == 0)
+            else if (arabicNumber == 4)
             {
                 romanNumerals = "iv";
             }
