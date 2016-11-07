@@ -16,7 +16,14 @@ namespace RomanNumerals
         [TestMethod]
         public void OneTest()
         {
-            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(1), "I", StringComparison.OrdinalIgnoreCase) == 0);
+            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(1), "i", StringComparison.OrdinalIgnoreCase) == 0);
+        }
+
+        [TestMethod]
+        public void TwoAndThreeTest()
+        {
+            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(2), "ii", StringComparison.OrdinalIgnoreCase) == 0);
+            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii", StringComparison.OrdinalIgnoreCase) == 0);
         }
     }
 }
