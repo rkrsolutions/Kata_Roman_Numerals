@@ -29,14 +29,9 @@ namespace RomanNumerals
         }
 
         [TestMethod]
-        public void OneTest()
+        public void OneToThreeTest()
         {
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(1), "i"));
-        }
-
-        [TestMethod]
-        public void TwoAndThreeTest()
-        {
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(2), "ii"));
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii"));
         }
