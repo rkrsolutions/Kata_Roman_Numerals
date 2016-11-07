@@ -10,7 +10,14 @@ namespace RomanNumerals
     {
         public static string ArabicToRomanNumerals(int arabicNumber)
         {
-            return String.Empty;
+            string romanNumerals = String.Empty;
+
+            if (arabicNumber == 1)
+            {
+                romanNumerals = "i";
+            }
+
+            return romanNumerals;
         }
     }
 }
