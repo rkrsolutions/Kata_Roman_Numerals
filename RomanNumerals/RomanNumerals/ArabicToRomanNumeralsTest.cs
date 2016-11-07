@@ -41,6 +41,11 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii"));
         }
 
+        [TestMethod]
+        public void FourTest()
+        {
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(4), "v"));
+        }
         #endregion
     }
 }
