@@ -13,9 +13,9 @@ namespace RomanNumerals
     {
         #region Utilities
 
-        public static bool StringsAreEqual(string argA, string argB)
+        public static bool StringsAreEqual(string expected, string actual)
         {
-            return String.Compare(argA, argB, StringComparison.OrdinalIgnoreCase) == 0;
+            return String.Compare(expected, actual, StringComparison.OrdinalIgnoreCase) == 0;
         }
 
         #endregion
@@ -29,43 +29,49 @@ namespace RomanNumerals
         }
 
         [TestMethod]
+        public void LessThanOneTest()
+        {
+            Assert.AreEqual(String.Empty, RomanNumeralConverter.ArabicToRomanNumerals(0));
+        }
+
+        [TestMethod]
         public void OneToThreeTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(1), "i"));
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(2), "ii"));
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii"));
+            Assert.IsTrue(StringsAreEqual("i", RomanNumeralConverter.ArabicToRomanNumerals(1)));
+            Assert.IsTrue(StringsAreEqual("ii", RomanNumeralConverter.ArabicToRomanNumerals(2)));
+            Assert.IsTrue(StringsAreEqual("iii", RomanNumeralConverter.ArabicToRomanNumerals(3)));
         }
 
         [TestMethod]
         public void FourTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(4), "iv"));
+            Assert.IsTrue(StringsAreEqual("iv", RomanNumeralConverter.ArabicToRomanNumerals(4)));
         }
 
         [TestMethod]
         public void FiveTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(5), "v"));
+            Assert.IsTrue(StringsAreEqual("v", RomanNumeralConverter.ArabicToRomanNumerals(5)));
         }
 
         [TestMethod]
         public void SixToEightTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(6), "vi"));
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(7), "vii"));
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(8), "viii"));
+            Assert.IsTrue(StringsAreEqual("vi", RomanNumeralConverter.ArabicToRomanNumerals(6)));
+            Assert.IsTrue(StringsAreEqual("vii", RomanNumeralConverter.ArabicToRomanNumerals(7)));
+            Assert.IsTrue(StringsAreEqual("viii", RomanNumeralConverter.ArabicToRomanNumerals(8)));
         }
 
         [TestMethod]
         public void NineTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(9), "ix"));
+            Assert.IsTrue(StringsAreEqual("ix", RomanNumeralConverter.ArabicToRomanNumerals(9)));
         }
 
         [TestMethod]
         public void TenTest()
         {
-            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(10), "x"));
+            Assert.IsTrue(StringsAreEqual("x", RomanNumeralConverter.ArabicToRomanNumerals(10)));
         }
 
         #endregion
