@@ -1,12 +1,27 @@
-﻿using System;
+﻿#region Using Directives
+
+using System;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+#endregion
 
 namespace RomanNumerals
 {
     [TestClass]
     public class ArabicToRomanNumeralsTest
     {
+        #region Utilities
+
+        public static bool StringsAreEqual(string argA, string argB)
+        {
+            return String.Compare(argA, argB, StringComparison.OrdinalIgnoreCase) == 0;
+        }
+
+        #endregion
+
+        #region Test Methods
+
         [TestMethod]
         public void NotNullTest()
         {
@@ -16,14 +31,16 @@ namespace RomanNumerals
         [TestMethod]
         public void OneTest()
         {
-            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(1), "i", StringComparison.OrdinalIgnoreCase) == 0);
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(1), "i"));
         }
 
         [TestMethod]
         public void TwoAndThreeTest()
         {
-            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(2), "ii", StringComparison.OrdinalIgnoreCase) == 0);
-            Assert.IsTrue(String.Compare(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii", StringComparison.OrdinalIgnoreCase) == 0);
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(2), "ii"));
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(3), "iii"));
         }
+
+        #endregion
     }
 }
