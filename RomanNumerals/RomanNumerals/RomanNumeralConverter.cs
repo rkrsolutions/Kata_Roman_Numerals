@@ -12,38 +12,47 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            if (arabicNumber == 10)
-            {
-                romanNumerals = "x";
-            }
-            else if (arabicNumber == 9)
-            {
-                romanNumerals = "ix";
-            }
-            else if (arabicNumber >= 5)
-            {
-                romanNumerals = "v";
+            int romanNumeralEquivalent  = 10;
+            int numeralCount = arabicNumber / romanNumeralEquivalent;
 
-                int arabicRemainder = arabicNumber % 5;
+            for (int i = 1; i <= numeralCount; i++)
+            {
+                romanNumerals += "x";
+            }
 
-                if (arabicRemainder > 0)
+            int arabicRemainder = arabicNumber % romanNumeralEquivalent;
+
+            if (arabicRemainder > 0)
+            {
+                if (arabicRemainder == 9)
+                {
+                    romanNumerals += "ix";
+                }
+                else if (arabicRemainder >= 5)
+                {
+                    romanNumerals += "v";
+
+                    arabicRemainder = arabicNumber % 5;
+
+                    if (arabicRemainder > 0)
+                    {
+                        for (int i = 1; i <= arabicRemainder; i++)
+                        {
+                            romanNumerals += "i";
+                        }
+                    }
+
+                }
+                else if (arabicRemainder == 4)
+                {
+                    romanNumerals += "iv";
+                }
+                else
                 {
                     for (int i = 1; i <= arabicRemainder; i++)
                     {
                         romanNumerals += "i";
                     }
-                }
-
-            }
-            else if (arabicNumber == 4)
-            {
-                romanNumerals = "iv";
-            }
-            else
-            {
-                for (int i = 1; i <= arabicNumber; i++)
-                {
-                    romanNumerals += "i";
                 }
             }
 
