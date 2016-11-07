@@ -56,6 +56,12 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(8), "viii"));
         }
 
+        [TestMethod]
+        public void NineTest()
+        {
+            Assert.IsTrue(StringsAreEqual(RomanNumeralConverter.ArabicToRomanNumerals(9), "ix"));
+        }
+
     #endregion
     }
 }
