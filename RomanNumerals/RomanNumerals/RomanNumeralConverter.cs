@@ -19,9 +19,13 @@ namespace RomanNumerals
                     romanNumerals += "i";
                 }
             }
-            else
+            else if (arabicNumber == 4)
             {
                 romanNumerals = "iv";
+            }
+            else
+            {
+                romanNumerals = "v";
             }
 
             return romanNumerals;
