@@ -23,14 +23,14 @@ namespace RomanNumerals
 
     public class RomanNumeralConverter
     {
-        private static readonly RomanNumeral ZERO_NUMERAL= new RomanNumeral(0, "i", String.Empty);
+        private static readonly RomanNumeral ONE_NUMERAL= new RomanNumeral(0, "i", String.Empty);
         private static readonly RomanNumeral TEN_NUMERAL = new RomanNumeral(1, "x", "v");
         private static readonly RomanNumeral HUNDRED_NUMERAL = new RomanNumeral(2, "c", "l");
         private static readonly RomanNumeral THOUSAND_NUMERAL = new RomanNumeral(3, "m", "d");
 
         public static IDictionary<int, RomanNumeral> ROMAN_NUMERALS =  new Dictionary<int, RomanNumeral>()
         {
-            { ZERO_NUMERAL.PowerOfTen, ZERO_NUMERAL },
+            { ONE_NUMERAL.PowerOfTen, ONE_NUMERAL },
             { TEN_NUMERAL.PowerOfTen, TEN_NUMERAL },
             { HUNDRED_NUMERAL.PowerOfTen, HUNDRED_NUMERAL },
             { THOUSAND_NUMERAL.PowerOfTen, THOUSAND_NUMERAL },
@@ -40,15 +40,18 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            int romanNumeralEquivalent  = 10;
-            int previousEquivalent = 1;
+            RomanNumeral tenNumeral = ROMAN_NUMERALS[1];
+            RomanNumeral oneNumeral = ROMAN_NUMERALS[0];
+
+            int romanNumeralEquivalent  = Convert.ToInt32(Math.Pow(10, tenNumeral.PowerOfTen));
+            int previousEquivalent = Convert.ToInt32(Math.Pow(10, oneNumeral.PowerOfTen));
 
             int halfEquivalent = romanNumeralEquivalent / 2;
             int numeralCount = arabicNumber / romanNumeralEquivalent;
 
             for (int i = 1; i <= numeralCount; i++)
             {
-                romanNumerals += "x";
+                romanNumerals += tenNumeral.Numeral;
             }
 
             int arabicRemainder = arabicNumber % romanNumeralEquivalent;
@@ -57,19 +60,19 @@ namespace RomanNumerals
             {
                 if (arabicRemainder == (romanNumeralEquivalent - previousEquivalent))
                 {
-                    romanNumerals += "ix";
+                    romanNumerals += oneNumeral.Numeral + tenNumeral.Numeral;
                 }
                 else
                 {
                     if (arabicRemainder >= halfEquivalent)
                     {
-                        romanNumerals += "v";
+                        romanNumerals += tenNumeral.HalfNumeral;
 
                         arabicRemainder -= halfEquivalent;
                     }
                     else if (arabicRemainder >= (halfEquivalent - previousEquivalent))
                     {
-                        romanNumerals += "iv";
+                        romanNumerals += oneNumeral.Numeral + tenNumeral.HalfNumeral;
 
                         arabicRemainder -= halfEquivalent - previousEquivalent;
                     }
@@ -78,7 +81,7 @@ namespace RomanNumerals
                     {
                         for (int i = 1; i <= arabicRemainder; i++)
                         {
-                            romanNumerals += "i";
+                            romanNumerals += oneNumeral.Numeral;
                         }
                     }
                 }
@@ -86,5 +89,7 @@ namespace RomanNumerals
 
             return romanNumerals;
         }
+
+
     }
 }
