@@ -9,7 +9,7 @@ namespace RomanNumerals
         [TestMethod]
         public void NotNullTest()
         {
-            Assert.IsNotNull(RomanNumeralConverter.ConvertArabicNumeral(String.Empty, String.Empty, String.Empty, 1));
+            Assert.IsNotNull(RomanNumeral.ConvertArabicNumeral(String.Empty, String.Empty, String.Empty, 1));
         }
     }
 }
