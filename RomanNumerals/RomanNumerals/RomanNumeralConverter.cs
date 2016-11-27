@@ -90,6 +90,9 @@ namespace RomanNumerals
             return romanNumerals;
         }
 
-
+        public static string ConvertArabicNumeral(string currentRomanNumeral, string halfRomanNumeral, string previousRomanNumeral, int arabicNumeral)
+        {
+            return null;
+        }
     }
 }
