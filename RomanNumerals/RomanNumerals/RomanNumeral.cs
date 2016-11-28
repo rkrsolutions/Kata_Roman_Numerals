@@ -27,6 +27,11 @@ namespace RomanNumerals
 
         public static string ConvertArabicNumeral(int arabicNumeral)
         {
+            if ((arabicNumeral < 1) || (arabicNumeral > 10))
+            {
+                throw new ArgumentOutOfRangeException(nameof(arabicNumeral), "The Arabic numeral to convert must be between 1 and 10 in value.");
+            }
+
             string result = String.Empty;
 
             return result;
