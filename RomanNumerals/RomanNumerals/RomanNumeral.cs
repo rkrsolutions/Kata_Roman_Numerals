@@ -61,14 +61,18 @@ namespace RomanNumerals
 
         public string ConvertArabicNumeral(int arabicNumeral)
         {
-            if ((arabicNumeral < 1) || (arabicNumeral > 10))
+            if ((arabicNumeral < 0) || (arabicNumeral > 9))
             {
                 throw new ArgumentOutOfRangeException(nameof(arabicNumeral), "The Arabic numeral to convert must be between 1 and 10 in value.");
             }
 
             string result = String.Empty;
 
-            if (arabicNumeral <= 3)
+            if (arabicNumeral <= 0)
+            {
+                result = String.Empty;
+            }
+            else if (arabicNumeral <= 3)
             {
                 if (PreviousNumeral == null)
                 {
