@@ -82,6 +82,10 @@ namespace RomanNumerals
                     result += previousRomanNumeral;
                 }
             }
+            else if (arabicNumeral == 5)
+            {
+                result = HalfNumeral;
+            }
 
             return result;
         }
