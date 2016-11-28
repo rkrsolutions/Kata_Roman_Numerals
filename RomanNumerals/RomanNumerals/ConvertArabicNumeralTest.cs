@@ -29,36 +29,38 @@ namespace RomanNumerals
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void LessThanOneTest()
         {
-            RomanNumeral.ConvertArabicNumeral(0);
+            RomanNumeral.Retrieve(1).ConvertArabicNumeral(0);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void GreaterThanTenTest()
         {
-            RomanNumeral.ConvertArabicNumeral(11);
+            RomanNumeral.Retrieve(1).ConvertArabicNumeral(11);
         }
 
         [TestMethod]
         public void NotNullTest()
         {
-            Assert.IsNotNull(RomanNumeral.ConvertArabicNumeral(1));
+            Assert.IsNotNull(RomanNumeral.Retrieve(1).ConvertArabicNumeral(1));
         }
 
         [TestMethod]
         public void OneToThreeTest()
         {
-            string oneResult = RomanNumeral.ConvertArabicNumeral(1);
+            RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+
+            string oneResult = romanNumeral.ConvertArabicNumeral(1);
             Assert.IsFalse(String.IsNullOrEmpty(oneResult));
             Assert.AreEqual(1, oneResult.Length);
 
-            string twoResult = RomanNumeral.ConvertArabicNumeral(2);
+            string twoResult = romanNumeral.ConvertArabicNumeral(2);
             Assert.IsFalse(String.IsNullOrEmpty(twoResult));
             Assert.AreEqual(2, twoResult.Length);
             Assert.IsTrue(twoResult.Contains(oneResult));
             Assert.IsTrue(AllTheSameCharacters(twoResult));
 
-            string threeResult = RomanNumeral.ConvertArabicNumeral(2);
+            string threeResult = romanNumeral.ConvertArabicNumeral(2);
             Assert.IsFalse(String.IsNullOrEmpty(threeResult));
             Assert.AreEqual(2, threeResult.Length);
             Assert.IsTrue(twoResult.Contains(oneResult));

@@ -12,8 +12,8 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            RomanNumeral tenNumeral = RomanNumeralLookUp.RetrieveNumeral(1);
-            RomanNumeral oneNumeral = RomanNumeralLookUp.RetrieveNumeral(0);
+            RomanNumeral tenNumeral = RomanNumeral.Retrieve(1);
+            RomanNumeral oneNumeral = RomanNumeral.Retrieve(0);
 
             int romanNumeralEquivalent  = Convert.ToInt32(Math.Pow(10, tenNumeral.PowerOfTen));
             int previousEquivalent = Convert.ToInt32(Math.Pow(10, oneNumeral.PowerOfTen));
