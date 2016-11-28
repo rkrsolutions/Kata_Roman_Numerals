@@ -29,5 +29,14 @@ namespace RomanNumerals
         {
             Assert.IsNotNull(RomanNumeral.ConvertArabicNumber(1));
         }
+
+        [TestMethod]
+        public void OutOfNumericRangeTest()
+        {
+            string zeroResult = RomanNumeral.ConvertArabicNumber(0);
+            Assert.AreEqual(String.Empty, zeroResult);
+            string fourThousandResult = RomanNumeral.ConvertArabicNumber(4000);
+            Assert.AreEqual(String.Empty, fourThousandResult);
+        }
     }
 }
