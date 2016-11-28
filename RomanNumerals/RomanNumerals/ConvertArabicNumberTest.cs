@@ -102,5 +102,11 @@ namespace RomanNumerals
             Assert.IsTrue(StringsAreEqual("xxxviii", RomanNumeral.ConvertArabicNumber("38")));
             Assert.IsTrue(StringsAreEqual("xxxix", RomanNumeral.ConvertArabicNumber("39")));
         }
+
+        [TestMethod]
+        public void ThreeThousandNineHundredNinetyNineTest()
+        {
+            Assert.IsTrue(StringsAreEqual("mmmcmxcix", RomanNumeral.ConvertArabicNumber("3999")));
+        }
     }
 }

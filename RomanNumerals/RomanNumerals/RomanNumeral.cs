@@ -70,17 +70,17 @@ namespace RomanNumerals
             string arabicNumberString = arabicNumber.ToString();
             int length = arabicNumberString.Length;
 
-            for (int i = 1; (i <= length); i++)
+            for (int powerOfTen = length; powerOfTen > 0; powerOfTen--)
             {
-                RomanNumeral romanNumeral = Retrieve(i);
+                RomanNumeral romanNumeral = Retrieve(powerOfTen);
 
                 if (romanNumeral == null)
                 {
                     break;
                 }
 
-                int arabicNumeral = Convert.ToInt32(arabicNumberString[length - i].ToString());
-                romanNumerals = romanNumeral.ConvertArabicNumeral(arabicNumeral) + romanNumerals;
+                int arabicNumeral = Convert.ToInt32(arabicNumberString[length - powerOfTen].ToString());
+                romanNumerals += romanNumeral.ConvertArabicNumeral(arabicNumeral);
             }
 
             return romanNumerals;
