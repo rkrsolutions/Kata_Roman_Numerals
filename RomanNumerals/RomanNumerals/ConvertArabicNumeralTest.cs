@@ -1,6 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿#region Using Directives
+
+using System;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+#endregion
 
 namespace RomanNumerals
 {
