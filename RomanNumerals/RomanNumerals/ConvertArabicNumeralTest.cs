@@ -66,5 +66,17 @@ namespace RomanNumerals
             Assert.IsTrue(twoResult.Contains(oneResult));
             Assert.IsTrue(AllTheSameCharacters(threeResult));
         }
+
+        [TestMethod]
+        public void FiveTest()
+        {
+            RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+
+            string oneResult = romanNumeral.ConvertArabicNumeral(1);
+            string fiveResult = romanNumeral.ConvertArabicNumeral(5);
+            Assert.IsFalse(String.IsNullOrEmpty(fiveResult));
+            Assert.AreEqual(1, fiveResult.Length);
+            Assert.AreNotEqual(oneResult, fiveResult);
+        }
     }
 }
