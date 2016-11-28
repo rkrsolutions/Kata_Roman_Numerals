@@ -67,7 +67,21 @@ namespace RomanNumerals
 
             string result = String.Empty;
 
+            if (arabicNumeral <= 3)
+            {
+                if (PreviousNumeral == null)
+                {
+                    // NOTE: This should never happen.  Bad static data initializaion is the only cause.
+                    throw new InvalidOperationException("Unable to retrieve the previous roman numeral for a power of ten that has no previous roman numeral define.");
+                }
 
+                string previousRomanNumeral = PreviousNumeral.Numeral;
+
+                for (int i = 0; i < arabicNumeral; i++)
+                {
+                    result += previousRomanNumeral;
+                }
+            }
 
             return result;
         }
