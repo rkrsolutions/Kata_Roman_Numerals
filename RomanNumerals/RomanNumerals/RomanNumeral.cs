@@ -68,6 +68,17 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
+            int power = 0;
+            int powerOfTen = Convert.ToInt32(Math.Pow(10, power));
+
+            while (arabicNumber > powerOfTen)
+            {
+                int remainder = arabicNumber % powerOfTen;
+                
+                power++;
+                powerOfTen = Convert.ToInt32(Math.Pow(10, power));
+            }
+
             return romanNumerals;
         }
 
