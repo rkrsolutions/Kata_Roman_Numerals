@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 #endregion
 
@@ -68,15 +67,20 @@ namespace RomanNumerals
         {
             string romanNumerals = String.Empty;
 
-            int power = 0;
-            int powerOfTen = Convert.ToInt32(Math.Pow(10, power));
+            string arabicNumberString = arabicNumber.ToString();
+            int length = arabicNumberString.Length;
 
-            while (arabicNumber > powerOfTen)
+            for (int i = 1; (i <= length); i++)
             {
-                int remainder = arabicNumber % powerOfTen;
-                
-                power++;
-                powerOfTen = Convert.ToInt32(Math.Pow(10, power));
+                RomanNumeral romanNumeral = Retrieve(i);
+
+                if (romanNumeral == null)
+                {
+                    break;
+                }
+
+                int arabicNumeral = Convert.ToInt32(arabicNumberString[length - i].ToString());
+                romanNumerals += romanNumeral.ConvertArabicNumeral(arabicNumeral);
             }
 
             return romanNumerals;
