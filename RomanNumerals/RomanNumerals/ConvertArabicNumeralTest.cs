@@ -90,5 +90,16 @@ namespace RomanNumerals
             Assert.AreNotEqual(oneResult, fiveResult);
             Assert.AreEqual(romanNumeral.HalfNumeral, fiveResult);
         }
+
+        [TestMethod]
+        public void SixTest()
+        {
+            RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+
+            string sixResult = romanNumeral.ConvertArabicNumeral(6);
+            Assert.IsFalse(String.IsNullOrEmpty(sixResult));
+            Assert.AreEqual(2, sixResult.Length);
+            Assert.AreEqual(romanNumeral.HalfNumeral + romanNumeral.PreviousNumeral.Numeral, sixResult);
+        }
     }
 }
