@@ -61,12 +61,14 @@ namespace RomanNumerals
 
         public static string ConvertArabicNumber(string arabicNumber)
         {
-            return String.Empty;
+            return ConvertArabicNumber(Int32.Parse(arabicNumber));
         }
 
         public static string ConvertArabicNumber(int arabicNumber)
         {
-            return String.Empty;
+            string romanNumerals = String.Empty;
+
+            return romanNumerals;
         }
 
         public string ConvertArabicNumeral(int arabicNumeral)
