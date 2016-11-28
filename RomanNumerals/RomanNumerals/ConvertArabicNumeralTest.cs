@@ -77,6 +77,7 @@ namespace RomanNumerals
             Assert.IsFalse(String.IsNullOrEmpty(fiveResult));
             Assert.AreEqual(1, fiveResult.Length);
             Assert.AreNotEqual(oneResult, fiveResult);
+            Assert.AreEqual(romanNumeral.HalfNumeral, fiveResult);
         }
     }
 }
