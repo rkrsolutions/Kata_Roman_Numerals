@@ -20,6 +20,7 @@ namespace RomanNumerals
             {1, new RomanNumeral(1, "x", "v")},
             {2, new RomanNumeral(2, "c", "l")},
             {3, new RomanNumeral(3, "m", "d")},
+            {4, new RomanNumeral(4, String.Empty, String.Empty)},
         };
 
         #endregion
@@ -72,7 +73,8 @@ namespace RomanNumerals
                 if (PreviousNumeral == null)
                 {
                     // NOTE: This should never happen.  Bad static data initializaion is the only cause.
-                    throw new InvalidOperationException("Unable to retrieve the previous roman numeral for a power of ten that has no previous roman numeral define.");
+                    throw new InvalidOperationException(
+                        "Unable to retrieve the previous roman numeral for a power of ten that has no previous roman numeral define.");
                 }
 
                 string previousRomanNumeral = PreviousNumeral.Numeral;
@@ -82,9 +84,16 @@ namespace RomanNumerals
                     result += previousRomanNumeral;
                 }
             }
-            else if (arabicNumeral == 5)
+            else if (!String.IsNullOrEmpty(HalfNumeral))
             {
-                result = HalfNumeral;
+                if (arabicNumeral == 4)
+                {
+                    result = PreviousNumeral.Numeral + HalfNumeral;
+                }
+                else if (arabicNumeral == 5)
+                {
+                    result = HalfNumeral;
+                }
             }
 
             return result;
