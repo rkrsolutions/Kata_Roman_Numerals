@@ -27,7 +27,9 @@ namespace RomanNumerals
 
         public static string ConvertArabicNumeral(int arabicNumeral)
         {
-            return null;
+            string result = String.Empty;
+
+            return result;
         }
 
         #endregion
