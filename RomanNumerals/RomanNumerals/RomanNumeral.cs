@@ -94,9 +94,14 @@ namespace RomanNumerals
                 {
                     result = HalfNumeral;
                 }
-                else if (arabicNumeral == 6)
+                else if (arabicNumeral < 9)
                 {
-                    result = HalfNumeral + PreviousNumeral.Numeral;
+                    result = HalfNumeral;
+
+                    for (int i = 5; i < arabicNumeral; i++)
+                    {
+                        result += PreviousNumeral.Numeral;
+                    }
                 }
             }
 
