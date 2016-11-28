@@ -80,7 +80,7 @@ namespace RomanNumerals
                 }
 
                 int arabicNumeral = Convert.ToInt32(arabicNumberString[length - i].ToString());
-                romanNumerals += romanNumeral.ConvertArabicNumeral(arabicNumeral);
+                romanNumerals = romanNumeral.ConvertArabicNumeral(arabicNumeral) + romanNumerals;
             }
 
             return romanNumerals;
