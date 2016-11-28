@@ -68,6 +68,17 @@ namespace RomanNumerals
         }
 
         [TestMethod]
+        public void FourTest()
+        {
+            RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+
+            string fourResult = romanNumeral.ConvertArabicNumeral(4);
+            Assert.IsFalse(String.IsNullOrEmpty(fourResult));
+            Assert.AreEqual(2, fourResult.Length);
+            Assert.AreEqual(romanNumeral.PreviousNumeral.Numeral + romanNumeral.HalfNumeral, fourResult);
+        }
+
+        [TestMethod]
         public void FiveTest()
         {
             RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
