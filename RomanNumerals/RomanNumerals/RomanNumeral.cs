@@ -1,5 +1,10 @@
+#region Using Directives
+
 using System;
 using System.Collections.Generic;
+using System.Threading;
+
+#endregion
 
 namespace RomanNumerals
 {
@@ -7,17 +12,14 @@ namespace RomanNumerals
     {
         #region Fields
 
-        private static readonly RomanNumeral OneNumeral = new RomanNumeral(0, "i", String.Empty);
-        private static readonly RomanNumeral TenNumeral = new RomanNumeral(1, "x", "v");
-        private static readonly RomanNumeral HundredNumeral = new RomanNumeral(2, "c", "l");
-        private static readonly RomanNumeral ThousandNumeral = new RomanNumeral(3, "m", "d");
+        private RomanNumeral previousNumeral = null;
 
         public static IDictionary<int, RomanNumeral> ROMAN_NUMERALS_MAP = new Dictionary<int, RomanNumeral>()
         {
-            {OneNumeral.PowerOfTen, OneNumeral},
-            {TenNumeral.PowerOfTen, TenNumeral},
-            {HundredNumeral.PowerOfTen, HundredNumeral},
-            {ThousandNumeral.PowerOfTen, ThousandNumeral},
+            {0, new RomanNumeral(0, "i", String.Empty)},
+            {1, new RomanNumeral(1, "x", "v")},
+            {2, new RomanNumeral(2, "c", "l")},
+            {3, new RomanNumeral(3, "m", "d")},
         };
 
         #endregion
@@ -27,6 +29,19 @@ namespace RomanNumerals
         public int PowerOfTen { get; }
         public string Numeral { get; }
         public string HalfNumeral { get; }
+
+        public RomanNumeral PreviousNumeral
+        {
+            get
+            {
+                if ((previousNumeral == null) && (PowerOfTen > 0))
+                {
+                    previousNumeral = Retrieve(PowerOfTen - 1);
+                }
+
+                return previousNumeral;
+            }
+        }
 
         #endregion
 
@@ -52,11 +67,18 @@ namespace RomanNumerals
 
             string result = String.Empty;
 
+
+
             return result;
         }
 
         public static RomanNumeral Retrieve(int powerOfTen)
         {
+            if (powerOfTen < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(powerOfTen), "Powers of ten must be greater than or equal to zero.");
+            }
+
             return ROMAN_NUMERALS_MAP.ContainsKey(powerOfTen) ? ROMAN_NUMERALS_MAP[powerOfTen] : null;
         }
 
