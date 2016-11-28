@@ -98,11 +98,11 @@ namespace RomanNumerals
             Assert.IsFalse(String.IsNullOrEmpty(sixResult));
             Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral, sixResult);
 
-            string twoResult = romanNumeral.ConvertArabicNumeral(2);
+            string twoResult = romanNumeral.ConvertArabicNumeral(7);
             Assert.IsFalse(String.IsNullOrEmpty(twoResult));
             Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral + previousNumeral, twoResult);
 
-            string threeResult = romanNumeral.ConvertArabicNumeral(3);
+            string threeResult = romanNumeral.ConvertArabicNumeral(8);
             Assert.IsFalse(String.IsNullOrEmpty(threeResult));
             Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral + previousNumeral + previousNumeral, threeResult);
         }
