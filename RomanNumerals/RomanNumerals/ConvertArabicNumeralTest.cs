@@ -49,22 +49,19 @@ namespace RomanNumerals
         public void OneToThreeTest()
         {
             RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+            string previousNumeral = romanNumeral.PreviousNumeral.Numeral;
 
             string oneResult = romanNumeral.ConvertArabicNumeral(1);
             Assert.IsFalse(String.IsNullOrEmpty(oneResult));
-            Assert.AreEqual(1, oneResult.Length);
+            Assert.AreEqual(previousNumeral, oneResult);
 
             string twoResult = romanNumeral.ConvertArabicNumeral(2);
             Assert.IsFalse(String.IsNullOrEmpty(twoResult));
-            Assert.AreEqual(2, twoResult.Length);
-            Assert.IsTrue(twoResult.Contains(oneResult));
-            Assert.IsTrue(AllTheSameCharacters(twoResult));
+            Assert.AreEqual(previousNumeral + previousNumeral, twoResult);
 
-            string threeResult = romanNumeral.ConvertArabicNumeral(2);
+            string threeResult = romanNumeral.ConvertArabicNumeral(3);
             Assert.IsFalse(String.IsNullOrEmpty(threeResult));
-            Assert.AreEqual(2, threeResult.Length);
-            Assert.IsTrue(twoResult.Contains(oneResult));
-            Assert.IsTrue(AllTheSameCharacters(threeResult));
+            Assert.AreEqual(previousNumeral + previousNumeral + previousNumeral, threeResult);
         }
 
         [TestMethod]
@@ -92,14 +89,22 @@ namespace RomanNumerals
         }
 
         [TestMethod]
-        public void SixTest()
+        public void SixToEightTest()
         {
             RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+            string previousNumeral = romanNumeral.PreviousNumeral.Numeral;
 
             string sixResult = romanNumeral.ConvertArabicNumeral(6);
             Assert.IsFalse(String.IsNullOrEmpty(sixResult));
-            Assert.AreEqual(2, sixResult.Length);
-            Assert.AreEqual(romanNumeral.HalfNumeral + romanNumeral.PreviousNumeral.Numeral, sixResult);
+            Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral, sixResult);
+
+            string twoResult = romanNumeral.ConvertArabicNumeral(2);
+            Assert.IsFalse(String.IsNullOrEmpty(twoResult));
+            Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral + previousNumeral, twoResult);
+
+            string threeResult = romanNumeral.ConvertArabicNumeral(3);
+            Assert.IsFalse(String.IsNullOrEmpty(threeResult));
+            Assert.AreEqual(romanNumeral.HalfNumeral + previousNumeral + previousNumeral + previousNumeral, threeResult);
         }
     }
 }
