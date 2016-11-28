@@ -12,7 +12,7 @@ namespace RomanNumerals
     public class ConvertArabicNumberTest
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(FormatException))]
         public void InvalidArabicNumberStringTest()
         {
             RomanNumeral.ConvertArabicNumber("abc");
