@@ -7,24 +7,6 @@ namespace RomanNumerals
     [TestClass]
     public class ConvertArabicNumeralTest
     {
-        #region Utilities
-
-        public static bool AllTheSameCharacters(string stringToTest)
-        {
-            bool result = false;
-
-            if (!String.IsNullOrEmpty(stringToTest))
-            {
-                char firstCharacter = stringToTest[0];
-
-                result = stringToTest.Length == stringToTest.Count(c => c.Equals(firstCharacter));
-            }
-
-            return result;
-        }
-
-        #endregion
-
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void LessThanOneTest()

@@ -103,6 +103,10 @@ namespace RomanNumerals
                         result += PreviousNumeral.Numeral;
                     }
                 }
+                else if (arabicNumeral == 9)
+                {
+                    result = PreviousNumeral.Numeral + Numeral;
+                }
             }
 
             return result;
