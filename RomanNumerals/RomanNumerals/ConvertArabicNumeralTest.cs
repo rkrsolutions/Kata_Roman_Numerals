@@ -9,22 +9,30 @@ namespace RomanNumerals
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void LessThanOneTest()
+        public void LessThanZeroTest()
         {
-            RomanNumeral.Retrieve(1).ConvertArabicNumeral(0);
+            RomanNumeral.Retrieve(1).ConvertArabicNumeral(-1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void GreaterThanTenTest()
+        public void GreaterThanNineTest()
         {
-            RomanNumeral.Retrieve(1).ConvertArabicNumeral(11);
+            RomanNumeral.Retrieve(1).ConvertArabicNumeral(10);
         }
 
         [TestMethod]
         public void NotNullTest()
         {
             Assert.IsNotNull(RomanNumeral.Retrieve(1).ConvertArabicNumeral(1));
+        }
+
+        [TestMethod]
+        public void ZeroTest()
+        {
+            RomanNumeral romanNumeral = RomanNumeral.Retrieve(1);
+            string zeroResult = romanNumeral.ConvertArabicNumeral(0);
+            Assert.AreEqual(String.Empty, zeroResult);
         }
 
         [TestMethod]
