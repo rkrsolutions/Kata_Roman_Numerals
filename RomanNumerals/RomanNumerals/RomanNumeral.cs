@@ -59,6 +59,16 @@ namespace RomanNumerals
 
         #region Methods
 
+        public static string ConvertArabicNumber(string arabicNumber)
+        {
+            return null;
+        }
+
+        public static string ConvertArabicNumber(int arabicNumber)
+        {
+            return null;
+        }
+
         public string ConvertArabicNumeral(int arabicNumeral)
         {
             if ((arabicNumeral < 0) || (arabicNumeral > 9))
@@ -77,8 +87,7 @@ namespace RomanNumerals
                 if (PreviousNumeral == null)
                 {
                     // NOTE: This should never happen.  Bad static data initializaion is the only cause.
-                    throw new InvalidOperationException(
-                        "Unable to retrieve the previous roman numeral for a power of ten that has no previous roman numeral define.");
+                    throw new InvalidOperationException("Unable to retrieve the previous roman numeral for a power of ten that has no previous roman numeral define.");
                 }
 
                 string previousRomanNumeral = PreviousNumeral.Numeral;
