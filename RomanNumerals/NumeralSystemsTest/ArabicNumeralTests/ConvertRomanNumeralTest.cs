@@ -18,12 +18,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void NotNullTest()
         {
-            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral(null, null));
+            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral(String.Empty, null));
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void ValidRomanNumeralParameter()
+        public void ValidRomanNumeralParameterTest()
         {
             ArabicNumeral.ConvertRomanNumeral(null, null);
         }
