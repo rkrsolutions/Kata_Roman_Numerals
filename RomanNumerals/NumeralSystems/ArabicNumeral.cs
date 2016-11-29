@@ -11,7 +11,8 @@ namespace NumeralSystems
         {
             {"i", "1"},
             {"v", "5" },
-            {"x", "10" }
+            {"x", "10" },
+            {"l", "50" }
         };
 
         #endregion
