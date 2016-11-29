@@ -61,7 +61,21 @@ namespace NumeralSystems
 
                 if (arabicNumeral != null)
                 {
-                    arabicNumber += arabicNumeral.IntegerValue;
+                    ArabicNumeral nextArabicNumeral = null;
+
+                    if (i + 1 < romanNumber.Length)
+                    {
+                        nextArabicNumeral = ConvertRomanNumeral(romanNumber[i+1].ToString());
+                    }
+
+                    if ((nextArabicNumeral != null) && (nextArabicNumeral.IntegerValue > arabicNumeral.IntegerValue))
+                    {
+                        arabicNumber -= arabicNumeral.IntegerValue;
+                    }
+                    else
+                    {
+                        arabicNumber += arabicNumeral.IntegerValue;
+                    }
                 }
             }
 
