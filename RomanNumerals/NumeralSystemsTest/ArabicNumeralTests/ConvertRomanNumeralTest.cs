@@ -46,6 +46,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x", String.Empty)));
         }
 
+        [TestMethod]
+        public void FiftyTest()
+        {
+            Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l", String.Empty)));
+        }
+
         #endregion
     }
 }
