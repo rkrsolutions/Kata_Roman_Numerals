@@ -52,6 +52,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("100".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("c").Numeral));
         }
 
+        [TestMethod]
+        public void FiveHundredTest()
+        {
+            Assert.IsTrue("500".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("d").Numeral));
+        }
+
         #endregion
     }
 }
