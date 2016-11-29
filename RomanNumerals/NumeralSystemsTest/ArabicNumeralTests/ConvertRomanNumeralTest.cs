@@ -1,5 +1,7 @@
 ﻿#region Using Directives
 
+using System;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using NumeralSystems;
@@ -17,6 +19,13 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         public void NotNullTest()
         {
             Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral(null, null));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ValidRomanNumeralParameter()
+        {
+            ArabicNumeral.ConvertRomanNumeral(null, null);
         }
 
         #endregion
