@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region Using Directives
+
+using System;
 using System.Collections.Generic;
+
+#endregion
 
 namespace NumeralSystems
 {
@@ -7,13 +11,33 @@ namespace NumeralSystems
     {
         #region Fields
 
-        public static IDictionary<string, string> ARABIC_NUMERALS_MAP = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        public static IDictionary<string, ArabicNumeral> ARABIC_NUMERALS_MAP = new Dictionary<string, ArabicNumeral>(StringComparer.OrdinalIgnoreCase)
         {
-            {"i", "1"},
-            {"v", "5" },
-            {"x", "10" },
-            {"l", "50" }
+            {"i", new ArabicNumeral(1)},
+            {"v", new ArabicNumeral(5)},
+            {"x", new ArabicNumeral(10)},
+            {"l", new ArabicNumeral(50)}
         };
+
+        #endregion
+
+        #region Properties
+
+        public int IntegerValue { get; }
+
+        public string Numeral
+        {
+            get { return IntegerValue.ToString(); }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        public ArabicNumeral(int integerValue)
+        {
+            IntegerValue = integerValue;
+        }
 
         #endregion
 
@@ -30,7 +54,7 @@ namespace NumeralSystems
 
             if (ARABIC_NUMERALS_MAP.Keys.Contains(romanNumeral))
             {
-                arabicNumeral = ARABIC_NUMERALS_MAP[romanNumeral];
+                arabicNumeral = ARABIC_NUMERALS_MAP[romanNumeral].Numeral;
             }
 
             return arabicNumeral;
