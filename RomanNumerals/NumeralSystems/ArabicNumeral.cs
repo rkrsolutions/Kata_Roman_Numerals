@@ -13,7 +13,14 @@ namespace NumeralSystems
                 throw new ArgumentException("The Roman Numeral to convert cannot be null or empty.", nameof(romanNumeral));
             }
 
-            return String.Empty;
+            string arabicNumeral = String.Empty;
+
+            if (romanNumeral.IgnoreCaseEquals("i"))
+            {
+                arabicNumeral = "1";
+            }
+
+            return arabicNumeral;
         }
 
         #endregion
