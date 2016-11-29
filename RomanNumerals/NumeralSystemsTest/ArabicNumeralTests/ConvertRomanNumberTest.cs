@@ -47,6 +47,17 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("1000".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("m")));
         }
 
+        [TestMethod]
+        public void OneBeforeNumeralToArabicNumberTest()
+        {
+            Assert.IsTrue("4".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("iv")));
+            Assert.IsTrue("9".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("ix")));
+            Assert.IsTrue("40".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xl")));
+            Assert.IsTrue("90".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xc")));
+            Assert.IsTrue("400".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("cd")));
+            Assert.IsTrue("900".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("cm")));
+        }
+
         #endregion
 
     }
