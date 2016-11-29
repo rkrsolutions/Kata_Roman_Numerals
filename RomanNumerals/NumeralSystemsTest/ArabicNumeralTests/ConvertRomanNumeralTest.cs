@@ -16,12 +16,6 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         #region Methods
 
         [TestMethod]
-        public void NotNullTest()
-        {
-            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral("m"));
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ValidRomanNumeralParameterTest()
         {
