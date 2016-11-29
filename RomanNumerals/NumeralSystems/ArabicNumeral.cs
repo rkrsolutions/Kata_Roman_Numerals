@@ -48,7 +48,8 @@ namespace NumeralSystems
 
         public static string ConvertRomanNumber(string romanNumber)
         {
-            return null;
+            string arabicNumber = String.Empty;
+            return arabicNumber;
         }
 
         public static ArabicNumeral ConvertRomanNumeral(string romanNumeral)
