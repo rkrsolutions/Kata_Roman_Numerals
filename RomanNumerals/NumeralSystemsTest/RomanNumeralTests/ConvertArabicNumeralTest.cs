@@ -8,7 +8,7 @@ using NumeralSystems;
 
 #endregion
 
-namespace NumeralSystemsTest
+namespace NumeralSystemsTest.RomanNumeralTests
 {
     [TestClass]
     public class ConvertArabicNumeralTest
