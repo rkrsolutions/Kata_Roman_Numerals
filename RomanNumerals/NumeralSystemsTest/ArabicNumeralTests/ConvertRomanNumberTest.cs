@@ -82,7 +82,27 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("dm")));
         }
 
-        #endregion
+        [TestMethod]
+        public void CompoundNumeralTest()
+        {
+            Assert.IsTrue("3".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("iii")));
+            Assert.IsTrue("6".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vi")));
+            Assert.IsTrue("7".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vii")));
+            Assert.IsTrue("11".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xi")));
+            Assert.IsTrue("18".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xviii")));
+            Assert.IsTrue("39".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xxxix")));
+            Assert.IsTrue("40".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xl")));
+            Assert.IsTrue("43".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xliii")));
+            Assert.IsTrue("44".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xliv")));
+            Assert.IsTrue("48".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xlviii")));
+            Assert.IsTrue("98".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xcviii")));
+            Assert.IsTrue("99".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xcix")));
+            Assert.IsTrue("498".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("cdxcviii")));
+            Assert.IsTrue("988".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("cmlxxxviii")));
+            Assert.IsTrue("2998".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("mmcmxcviii")));
+            Assert.IsTrue("2999".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("mmcmxcix")));
+        }
 
+        #endregion
     }
 }
