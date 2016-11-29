@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NumeralSystems
 {
     public class ArabicNumeral
     {
+        #region Fields
+
+        public static IDictionary<string, string> ARABIC_NUMERALS_MAP = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            {"i", "1"}
+        };
+
+        #endregion
+
         #region Methods
 
         public static string ConvertRomanNumeral(string romanNumeral, string nextRomanNumeral)
@@ -15,9 +25,9 @@ namespace NumeralSystems
 
             string arabicNumeral = String.Empty;
 
-            if (romanNumeral.IgnoreCaseEquals("i"))
+            if (ARABIC_NUMERALS_MAP.Keys.Contains(romanNumeral))
             {
-                arabicNumeral = "1";
+                arabicNumeral = ARABIC_NUMERALS_MAP[romanNumeral];
             }
 
             return arabicNumeral;
