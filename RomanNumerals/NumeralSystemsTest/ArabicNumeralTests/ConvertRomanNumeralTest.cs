@@ -43,7 +43,7 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void TenTest()
         {
-            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x", String.Empty)));
+            Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x", String.Empty)));
         }
 
         #endregion
