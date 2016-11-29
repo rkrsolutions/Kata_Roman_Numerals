@@ -46,6 +46,11 @@ namespace NumeralSystems
 
         #region Methods
 
+        public static string ConvertRomanNumber(string romanNumber)
+        {
+            return null;
+        }
+
         public static ArabicNumeral ConvertRomanNumeral(string romanNumeral)
         {
             if (String.IsNullOrEmpty(romanNumeral))
