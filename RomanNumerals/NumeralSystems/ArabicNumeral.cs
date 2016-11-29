@@ -53,8 +53,19 @@ namespace NumeralSystems
                 throw new ArgumentException("The Roman Numeral to convert cannot be null or empty.", nameof(romanNumber));
             }
 
-            string arabicNumber = String.Empty;
-            return arabicNumber;
+            int arabicNumber = 0;
+            
+            for (int i = 0; i < romanNumber.Length; i++)
+            {
+                ArabicNumeral arabicNumeral = ConvertRomanNumeral(romanNumber[i].ToString());
+
+                if (arabicNumeral != null)
+                {
+                    arabicNumber += arabicNumeral.IntegerValue;
+                }
+            }
+
+            return arabicNumber.ToString();
         }
 
         public static ArabicNumeral ConvertRomanNumeral(string romanNumeral)
