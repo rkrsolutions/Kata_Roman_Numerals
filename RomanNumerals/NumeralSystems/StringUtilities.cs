@@ -4,13 +4,13 @@ using System;
 
 #endregion
 
-namespace NumeralSystemsTest
+namespace NumeralSystems
 {
-    public static class TestUtilities
+    public static class StringUtilities
     {
         #region Methods
 
-        public static bool StringsAreEqual(this string expected, string actual)
+        public static bool IgnoreCaseEquals(this string expected, string actual)
         {
             return String.Compare(expected, actual, StringComparison.OrdinalIgnoreCase) == 0;
         }

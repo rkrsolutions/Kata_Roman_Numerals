@@ -31,7 +31,7 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void OneTest()
         {
-            Assert.IsTrue("1".StringsAreEqual(ArabicNumeral.ConvertRomanNumeral("i", String.Empty)));
+            Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i", String.Empty)));
         }
 
         #endregion
