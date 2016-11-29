@@ -104,6 +104,29 @@ namespace RomanNumerals
         }
 
         [TestMethod]
+        public void OneAndTwoLessThenNextNumeralTest()
+        {
+            Assert.IsTrue(StringsAreEqual("xl", RomanNumeral.ConvertArabicNumber("40")));
+            Assert.IsTrue(StringsAreEqual("xliii", RomanNumeral.ConvertArabicNumber("43")));
+            Assert.IsTrue(StringsAreEqual("xliv", RomanNumeral.ConvertArabicNumber("44")));
+            Assert.IsTrue(StringsAreEqual("xlviii", RomanNumeral.ConvertArabicNumber("48")));
+            Assert.IsTrue(StringsAreEqual("xlix", RomanNumeral.ConvertArabicNumber("49")));
+            Assert.IsTrue(StringsAreEqual("xc", RomanNumeral.ConvertArabicNumber("90")));
+            Assert.IsTrue(StringsAreEqual("xcviii", RomanNumeral.ConvertArabicNumber("98")));
+            Assert.IsTrue(StringsAreEqual("xcix", RomanNumeral.ConvertArabicNumber("99")));
+            Assert.IsTrue(StringsAreEqual("cd", RomanNumeral.ConvertArabicNumber("400")));
+            Assert.IsTrue(StringsAreEqual("cdxcviii", RomanNumeral.ConvertArabicNumber("498")));
+            Assert.IsTrue(StringsAreEqual("cdxcix", RomanNumeral.ConvertArabicNumber("499")));
+            Assert.IsTrue(StringsAreEqual("cm", RomanNumeral.ConvertArabicNumber("900")));
+            Assert.IsTrue(StringsAreEqual("cmxcviii", RomanNumeral.ConvertArabicNumber("998")));
+            Assert.IsTrue(StringsAreEqual("cmxcix", RomanNumeral.ConvertArabicNumber("999")));
+            Assert.IsTrue(StringsAreEqual("mcdxcviii", RomanNumeral.ConvertArabicNumber("1498")));
+            Assert.IsTrue(StringsAreEqual("mcdxcix", RomanNumeral.ConvertArabicNumber("1499")));
+            Assert.IsTrue(StringsAreEqual("mmcmxcviii", RomanNumeral.ConvertArabicNumber("2998")));
+            Assert.IsTrue(StringsAreEqual("mmcmxcix", RomanNumeral.ConvertArabicNumber("2999")));
+        }
+
+        [TestMethod]
         public void ThreeThousandNineHundredNinetyNineTest()
         {
             Assert.IsTrue(StringsAreEqual("mmmcmxcix", RomanNumeral.ConvertArabicNumber("3999")));
