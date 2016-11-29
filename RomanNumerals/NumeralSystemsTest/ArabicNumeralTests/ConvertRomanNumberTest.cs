@@ -58,6 +58,30 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("900".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("cm")));
         }
 
+        [TestMethod]
+        public void InvalidRomanNumberFormatTest()
+        {
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("il")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("ic")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("id")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("im")));
+
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vx")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vl")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vc")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vd")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("vm")));
+
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xd")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("xm")));
+
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("lc")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("ld")));
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("lm")));
+
+            Assert.IsTrue(String.Empty.IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumber("dm")));
+        }
+
         #endregion
 
     }
