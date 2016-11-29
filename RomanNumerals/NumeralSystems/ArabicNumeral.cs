@@ -1,4 +1,6 @@
-﻿namespace NumeralSystems
+﻿using System;
+
+namespace NumeralSystems
 {
     public class ArabicNumeral
     {
@@ -6,7 +8,7 @@
 
         public static string ConvertRomanNumeral(string romanNumeral, string nextRomanNumeral)
         {
-            return null;
+            return String.Empty;
         }
 
         #endregion
