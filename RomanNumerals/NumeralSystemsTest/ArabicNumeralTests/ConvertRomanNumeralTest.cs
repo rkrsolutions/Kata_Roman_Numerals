@@ -18,7 +18,7 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void NotNullTest()
         {
-            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral(String.Empty, null));
+            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral("m", null));
         }
 
         [TestMethod]
@@ -26,6 +26,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         public void ValidRomanNumeralParameterTest()
         {
             ArabicNumeral.ConvertRomanNumeral(null, null);
+        }
+
+        [TestMethod]
+        public void OneTest()
+        {
+            Assert.IsTrue("1".StringsAreEqual(ArabicNumeral.ConvertRomanNumeral("i", String.Empty)));
         }
 
         #endregion
