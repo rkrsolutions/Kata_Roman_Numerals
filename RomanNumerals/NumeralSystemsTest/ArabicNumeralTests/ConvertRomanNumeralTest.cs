@@ -46,6 +46,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l").Numeral));
         }
 
+        [TestMethod]
+        public void OneHundredTest()
+        {
+            Assert.IsTrue("100".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("c").Numeral));
+        }
+
         #endregion
     }
 }
