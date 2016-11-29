@@ -31,25 +31,25 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void OneTest()
         {
-            Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i")));
+            Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i").Numeral));
         }
 
         [TestMethod]
         public void FiveTest()
         {
-            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("v")));
+            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("v").Numeral));
         }
 
         [TestMethod]
         public void TenTest()
         {
-            Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x")));
+            Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x").Numeral));
         }
 
         [TestMethod]
         public void FiftyTest()
         {
-            Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l")));
+            Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l").Numeral));
         }
 
         #endregion

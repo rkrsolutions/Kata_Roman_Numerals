@@ -43,18 +43,18 @@ namespace NumeralSystems
 
         #region Methods
 
-        public static string ConvertRomanNumeral(string romanNumeral)
+        public static ArabicNumeral ConvertRomanNumeral(string romanNumeral)
         {
             if (String.IsNullOrEmpty(romanNumeral))
             {
                 throw new ArgumentException("The Roman Numeral to convert cannot be null or empty.", nameof(romanNumeral));
             }
 
-            string arabicNumeral = String.Empty;
+            ArabicNumeral arabicNumeral = null;
 
             if (ARABIC_NUMERALS_MAP.Keys.Contains(romanNumeral))
             {
-                arabicNumeral = ARABIC_NUMERALS_MAP[romanNumeral].Numeral;
+                arabicNumeral = ARABIC_NUMERALS_MAP[romanNumeral];
             }
 
             return arabicNumeral;
