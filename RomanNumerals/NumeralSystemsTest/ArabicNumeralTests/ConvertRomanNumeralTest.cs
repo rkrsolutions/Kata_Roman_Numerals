@@ -34,6 +34,12 @@ namespace NumeralSystemsTest.ArabicNumeralTests
             Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i", String.Empty)));
         }
 
+        [TestMethod]
+        public void FiveTest()
+        {
+            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("v", String.Empty)));
+        }
+
         #endregion
     }
 }
