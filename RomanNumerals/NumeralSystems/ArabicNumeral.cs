@@ -10,7 +10,8 @@ namespace NumeralSystems
         public static IDictionary<string, string> ARABIC_NUMERALS_MAP = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
             {"i", "1"},
-            {"v", "5" }
+            {"v", "5" },
+            {"x", "10" }
         };
 
         #endregion
