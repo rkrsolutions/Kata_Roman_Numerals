@@ -44,85 +44,85 @@ namespace NumeralSystemsTest.RomanNumeralTests
         [TestMethod]
         public void OneToThreeTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("i", RomanNumeral.ConvertArabicNumber("1")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("ii", RomanNumeral.ConvertArabicNumber("2")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("iii", RomanNumeral.ConvertArabicNumber("3")));
+            Assert.IsTrue("i".StringsAreEqual(RomanNumeral.ConvertArabicNumber("1")));
+            Assert.IsTrue("ii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("2")));
+            Assert.IsTrue("iii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("3")));
         }
 
         [TestMethod]
         public void FourTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("iv", RomanNumeral.ConvertArabicNumber("4")));
+            Assert.IsTrue("iv".StringsAreEqual(RomanNumeral.ConvertArabicNumber("4")));
         }
 
         [TestMethod]
         public void FiveTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("v", RomanNumeral.ConvertArabicNumber("5")));
+            Assert.IsTrue("v".StringsAreEqual(RomanNumeral.ConvertArabicNumber("5")));
         }
 
         [TestMethod]
         public void SixToEightTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("vi", RomanNumeral.ConvertArabicNumber("6")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("vii", RomanNumeral.ConvertArabicNumber("7")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("viii", RomanNumeral.ConvertArabicNumber("8")));
+            Assert.IsTrue("vi".StringsAreEqual(RomanNumeral.ConvertArabicNumber("6")));
+            Assert.IsTrue("vii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("7")));
+            Assert.IsTrue("viii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("8")));
         }
 
         [TestMethod]
         public void NineTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("ix", RomanNumeral.ConvertArabicNumber("9")));
+            Assert.IsTrue("ix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("9")));
         }
 
         [TestMethod]
         public void TenTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("x", RomanNumeral.ConvertArabicNumber("10")));
+            Assert.IsTrue("x".StringsAreEqual(RomanNumeral.ConvertArabicNumber("10")));
         }
 
         [TestMethod]
         public void GreaterThan10LessThan40Test()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xi", RomanNumeral.ConvertArabicNumber("11")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xiii", RomanNumeral.ConvertArabicNumber("13")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xiv", RomanNumeral.ConvertArabicNumber("14")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xv", RomanNumeral.ConvertArabicNumber("15")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xvi", RomanNumeral.ConvertArabicNumber("16")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xix", RomanNumeral.ConvertArabicNumber("19")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xx", RomanNumeral.ConvertArabicNumber("20")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xxi", RomanNumeral.ConvertArabicNumber("21")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xxxviii", RomanNumeral.ConvertArabicNumber("38")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xxxix", RomanNumeral.ConvertArabicNumber("39")));
+            Assert.IsTrue("xi".StringsAreEqual(RomanNumeral.ConvertArabicNumber("11")));
+            Assert.IsTrue("xiii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("13")));
+            Assert.IsTrue("xiv".StringsAreEqual(RomanNumeral.ConvertArabicNumber("14")));
+            Assert.IsTrue("xv".StringsAreEqual(RomanNumeral.ConvertArabicNumber("15")));
+            Assert.IsTrue("xvi".StringsAreEqual(RomanNumeral.ConvertArabicNumber("16")));
+            Assert.IsTrue("xix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("19")));
+            Assert.IsTrue("xx".StringsAreEqual(RomanNumeral.ConvertArabicNumber("20")));
+            Assert.IsTrue("xxi".StringsAreEqual(RomanNumeral.ConvertArabicNumber("21")));
+            Assert.IsTrue("xxxviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("38")));
+            Assert.IsTrue("xxxix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("39")));
         }
 
         [TestMethod]
         public void OneAndTwoLessThenNextNumeralTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xl", RomanNumeral.ConvertArabicNumber("40")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xliii", RomanNumeral.ConvertArabicNumber("43")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xliv", RomanNumeral.ConvertArabicNumber("44")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xlviii", RomanNumeral.ConvertArabicNumber("48")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xlix", RomanNumeral.ConvertArabicNumber("49")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xc", RomanNumeral.ConvertArabicNumber("90")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xcviii", RomanNumeral.ConvertArabicNumber("98")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("xcix", RomanNumeral.ConvertArabicNumber("99")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cd", RomanNumeral.ConvertArabicNumber("400")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cdxcviii", RomanNumeral.ConvertArabicNumber("498")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cdxcix", RomanNumeral.ConvertArabicNumber("499")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cm", RomanNumeral.ConvertArabicNumber("900")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cmxcviii", RomanNumeral.ConvertArabicNumber("998")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("cmxcix", RomanNumeral.ConvertArabicNumber("999")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("mcdxcviii", RomanNumeral.ConvertArabicNumber("1498")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("mcdxcix", RomanNumeral.ConvertArabicNumber("1499")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("mmcmxcviii", RomanNumeral.ConvertArabicNumber("2998")));
-            Assert.IsTrue(TestUtilities.StringsAreEqual("mmcmxcix", RomanNumeral.ConvertArabicNumber("2999")));
+            Assert.IsTrue("xl".StringsAreEqual(RomanNumeral.ConvertArabicNumber("40")));
+            Assert.IsTrue("xliii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("43")));
+            Assert.IsTrue("xliv".StringsAreEqual(RomanNumeral.ConvertArabicNumber("44")));
+            Assert.IsTrue("xlviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("48")));
+            Assert.IsTrue("xlix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("49")));
+            Assert.IsTrue("xc".StringsAreEqual(RomanNumeral.ConvertArabicNumber("90")));
+            Assert.IsTrue("xcviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("98")));
+            Assert.IsTrue("xcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("99")));
+            Assert.IsTrue("cd".StringsAreEqual(RomanNumeral.ConvertArabicNumber("400")));
+            Assert.IsTrue("cdxcviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("498")));
+            Assert.IsTrue("cdxcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("499")));
+            Assert.IsTrue("cm".StringsAreEqual(RomanNumeral.ConvertArabicNumber("900")));
+            Assert.IsTrue("cmxcviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("998")));
+            Assert.IsTrue("cmxcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("999")));
+            Assert.IsTrue("mcdxcviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("1498")));
+            Assert.IsTrue("mcdxcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("1499")));
+            Assert.IsTrue("mmcmxcviii".StringsAreEqual(RomanNumeral.ConvertArabicNumber("2998")));
+            Assert.IsTrue("mmcmxcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("2999")));
         }
 
         [TestMethod]
         public void ThreeThousandNineHundredNinetyNineTest()
         {
-            Assert.IsTrue(TestUtilities.StringsAreEqual("mmmcmxcix", RomanNumeral.ConvertArabicNumber("3999")));
+            Assert.IsTrue("mmmcmxcix".StringsAreEqual(RomanNumeral.ConvertArabicNumber("3999")));
         }
     }
 }
