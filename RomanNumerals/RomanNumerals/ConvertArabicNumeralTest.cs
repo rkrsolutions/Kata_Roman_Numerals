@@ -4,6 +4,8 @@ using System;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using NumeralSystems;
+
 #endregion
 
 namespace RomanNumerals

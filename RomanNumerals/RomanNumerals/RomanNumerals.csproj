@@ -53,9 +53,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ConvertArabicNumberTest.cs" />
-    <Compile Include="RomanNumeral.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConvertArabicNumeralTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NumeralSystems\NumeralSystems.csproj">
+      <Project>{5d263b82-d70c-49a9-b52c-5ad25306b8e2}</Project>
+      <Name>NumeralSystems</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

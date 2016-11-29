@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace RomanNumerals
+namespace NumeralSystems
 {
     public class RomanNumeral
     {
