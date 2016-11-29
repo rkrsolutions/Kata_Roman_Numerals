@@ -53,9 +53,9 @@ namespace NumeralSystems
                 throw new ArgumentException("The Roman Numeral to convert cannot be null or empty.", nameof(romanNumber));
             }
 
-            int arabicNumber = 0;
+            int? arabicNumber = 0;
             
-            for (int i = 0; i < romanNumber.Length; i++)
+            for (int i = 0; i < romanNumber.Length && arabicNumber.HasValue; i++)
             {
                 ArabicNumeral arabicNumeral = ConvertRomanNumeral(romanNumber[i].ToString());
 
@@ -65,12 +65,20 @@ namespace NumeralSystems
 
                     if (i + 1 < romanNumber.Length)
                     {
-                        nextArabicNumeral = ConvertRomanNumeral(romanNumber[i+1].ToString());
+                        nextArabicNumeral = ConvertRomanNumeral(romanNumber[i + 1].ToString());
                     }
 
                     if ((nextArabicNumeral != null) && (nextArabicNumeral.IntegerValue > arabicNumeral.IntegerValue))
                     {
-                        arabicNumber -= arabicNumeral.IntegerValue;
+                        if (((nextArabicNumeral.IntegerValue != arabicNumeral.IntegerValue * 5) && (nextArabicNumeral.IntegerValue != arabicNumeral.IntegerValue * 10)) || 
+                            (arabicNumeral.IntegerValue == 5) || (arabicNumeral.IntegerValue == 50) || (arabicNumeral.IntegerValue == 500))
+                        {
+                            arabicNumber = null;
+                        }
+                        else
+                        {
+                            arabicNumber -= arabicNumeral.IntegerValue;
+                        }
                     }
                     else
                     {
@@ -79,7 +87,7 @@ namespace NumeralSystems
                 }
             }
 
-            return arabicNumber.ToString();
+            return arabicNumber.HasValue ? arabicNumber.ToString() : String.Empty;
         }
 
         public static ArabicNumeral ConvertRomanNumeral(string romanNumeral)
