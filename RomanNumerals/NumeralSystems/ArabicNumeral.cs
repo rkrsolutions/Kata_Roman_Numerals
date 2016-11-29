@@ -18,7 +18,8 @@ namespace NumeralSystems
             {"x", new ArabicNumeral(10)},
             {"l", new ArabicNumeral(50)},
             {"c", new ArabicNumeral(100)},
-            {"d", new ArabicNumeral(500)}
+            {"d", new ArabicNumeral(500)},
+            {"m", new ArabicNumeral(1000)}
         };
 
         #endregion
