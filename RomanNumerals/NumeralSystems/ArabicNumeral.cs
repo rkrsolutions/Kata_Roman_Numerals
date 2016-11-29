@@ -48,6 +48,11 @@ namespace NumeralSystems
 
         public static string ConvertRomanNumber(string romanNumber)
         {
+            if (String.IsNullOrEmpty(romanNumber))
+            {
+                throw new ArgumentException("The Roman Numeral to convert cannot be null or empty.", nameof(romanNumber));
+            }
+
             string arabicNumber = String.Empty;
             return arabicNumber;
         }
