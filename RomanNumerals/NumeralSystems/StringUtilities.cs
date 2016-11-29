@@ -12,7 +12,7 @@ namespace NumeralSystems
 
         public static bool IgnoreCaseEquals(this string expected, string actual)
         {
-            return String.Compare(expected, actual, StringComparison.OrdinalIgnoreCase) == 0;
+            return String.Equals(expected, actual, StringComparison.OrdinalIgnoreCase);
         }
 
         #endregion
