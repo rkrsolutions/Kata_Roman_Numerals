@@ -21,6 +21,13 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void RomanNumberParameterEmptyTest()
+        {
+            ArabicNumeral.ConvertRomanNumber(String.Empty);
+        }
+
+        [TestMethod]
         public void NotNullTest()
         {
             Assert.IsNotNull(ArabicNumeral.ConvertRomanNumber("ab"));
