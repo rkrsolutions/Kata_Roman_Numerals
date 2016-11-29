@@ -18,38 +18,38 @@ namespace NumeralSystemsTest.ArabicNumeralTests
         [TestMethod]
         public void NotNullTest()
         {
-            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral("m", null));
+            Assert.IsNotNull(ArabicNumeral.ConvertRomanNumeral("m"));
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ValidRomanNumeralParameterTest()
         {
-            ArabicNumeral.ConvertRomanNumeral(null, null);
+            ArabicNumeral.ConvertRomanNumeral(null);
         }
 
         [TestMethod]
         public void OneTest()
         {
-            Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i", String.Empty)));
+            Assert.IsTrue("1".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("i")));
         }
 
         [TestMethod]
         public void FiveTest()
         {
-            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("v", String.Empty)));
+            Assert.IsTrue("5".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("v")));
         }
 
         [TestMethod]
         public void TenTest()
         {
-            Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x", String.Empty)));
+            Assert.IsTrue("10".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("x")));
         }
 
         [TestMethod]
         public void FiftyTest()
         {
-            Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l", String.Empty)));
+            Assert.IsTrue("50".IgnoreCaseEquals(ArabicNumeral.ConvertRomanNumeral("l")));
         }
 
         #endregion

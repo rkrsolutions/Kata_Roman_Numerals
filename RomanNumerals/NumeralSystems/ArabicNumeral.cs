@@ -43,7 +43,7 @@ namespace NumeralSystems
 
         #region Methods
 
-        public static string ConvertRomanNumeral(string romanNumeral, string nextRomanNumeral)
+        public static string ConvertRomanNumeral(string romanNumeral)
         {
             if (String.IsNullOrEmpty(romanNumeral))
             {
